@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 30px;
+        }
+        .section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            display: flex;
+            justify-content: space-between; /* Aligns items to the sides */
+            align-items: center; /* Centers items vertically */
+        }
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        .section h2 {
+            color: #007BFF;
+            margin: 0; /* Removes margin for better alignment */
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 25px; /* Rounded corners */
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px); /* Lift effect */
+        }
+        .button:active {
+            transform: translateY(1px); /* Press effect */
+        }
+        .note {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Client Management System</h1>
+
+        <div class="section">
+            <h2>Display Clients</h2>
+            <a href="/display-data" class="button">View Clients</a>
+        </div>
+
+        <div class="section">
+            <h2>Export Options</h2>
+            <div>
+                <a href="/export-csv" class="button">Export to CSV</a>
+                <a href="/export-pdf" class="button">Export to PDF</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Upload Data</h2>
+            <a href="/upload-excel" class="button">Upload Excel</a>
+        </div>
+
+        <div class="section">
+            <h2>Get in Touch</h2>
+            <a href="/contact-form" class="button">Contact Us</a>
+        </div>
+
+    </div>
+</body>
+</html>

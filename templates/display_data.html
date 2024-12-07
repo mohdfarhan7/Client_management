@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Clients in Database</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Contact Number</th>
+                    <th>Email</th>
+                    <th>Quotation</th>
+                    <th>Service</th>
+                    <th>Message</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for client in clients %}
+                <tr>
+                    <td>{{ client.name }}</td>
+                    <td>{{ client.contact_number }}</td>
+                    <td>{{ client.email }}</td>
+                    <td>{{ client.quotation }}</td>
+                    <td>{{ client.service }}</td>
+                    <td>{{ client.message }}</td>
+                    <td>
+                        <form action="/delete-client/{{ client.id }}" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form action="/delete-all" method="POST">
+            <button type="submit">Delete All Clients</button>
+        </form>
+        <a href="/" class="button">Back to Home</a>
+    </div>
+</body>
+</html>
